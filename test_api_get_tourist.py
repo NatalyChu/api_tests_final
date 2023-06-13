@@ -39,7 +39,7 @@ def test_create_tourist():
     new_tourist = {
         "id": 100500,
         "tourist_name": "H",
-        "tourist_email": "nn@gm.com",
+        "tourist_email": "nnn@gm.com",
         "tourist_location": "G",
         "createdat": "2023-06-12T20:25:04.282Z"
 }
@@ -49,7 +49,7 @@ def test_create_tourist():
 
     assert response.status_code == 201
     assert response_body["tourist_name"] == "H"
-    assert response_body["tourist_email"] == "nn@gm.com"
+    assert response_body["tourist_email"] == "nnn@gm.com"
 
 
 @allure.story('The tourist data can be retrieved by an id')
