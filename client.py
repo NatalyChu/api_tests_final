@@ -1,4 +1,5 @@
 import requests
+import allure
 
 
 class RestfulBookerClient:
@@ -7,6 +8,7 @@ class RestfulBookerClient:
     def __init__(self, token=None):
         self.token = token
 
+    @allure.step
     def authorize(self, username, password):
         data = {
             "email": username,
@@ -19,11 +21,13 @@ class RestfulBookerClient:
             raise Exception(f"Authorization failed: {response.status_code}")
         return response
 
+    @allure.step
     def perform_get_request(self, endpoint):
         url = self.BASE_URL + endpoint
         response = requests.get(url)
         return response
 
+    @allure.step
     def perform_post_request(self, endpoint, data):
         url = self.BASE_URL + endpoint
         headers = {"Content-Type": "application/json"}
@@ -32,6 +36,7 @@ class RestfulBookerClient:
         response = requests.post(url, json=data, headers=headers)
         return response
 
+    @allure.step
     def perform_put_request(self, endpoint, data):
         url = self.BASE_URL + endpoint
         headers = {"Content-Type": "application/json"}
@@ -40,6 +45,7 @@ class RestfulBookerClient:
         response = requests.put(url, json=data, headers=headers)
         return response
 
+    @allure.step
     def perform_delete_request(self, endpoint, data):
         url = self.BASE_URL + endpoint
         response = requests.delete(url)

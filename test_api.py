@@ -1,8 +1,10 @@
 from client import RestfulBookerClient
+import allure
 
 client = RestfulBookerClient()
 client.authorize("admin111@gm.com", "password123")
 
+@allure.step
 def get_tourist_id(tourist_email):
     response = client.perform_get_request("/api/Tourist")
     response_body = response.json()
@@ -13,6 +15,7 @@ def get_tourist_id(tourist_email):
             tourist_id = item["id"]
     return tourist_id
 
+@allure.step
 def delete_tourist(tourist_email):
     tourist_id = get_tourist_id(tourist_email)
 
