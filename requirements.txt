@@ -1,0 +1,5 @@
+requests
+pytest
+urllib3<2.0
+allure-pytest
+flake8
