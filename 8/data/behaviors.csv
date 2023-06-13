@@ -1,0 +1,8 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","","The tourist is not found","0","0","1","0","0"
+"","","The login is unsuccessful with the empty creds","0","0","1","0","0"
+"","","The tourist data can be retrieved by an id","0","0","1","0","0"
+"","","The login is unsuccessful with the incorrect creds","0","0","1","0","0"
+"","","The login is successful with the correct creds","0","0","1","0","0"
+"","","The tourist data is being returned","0","0","1","0","0"
+"","","The new tourist is being correctly created","1","0","0","0","0"
