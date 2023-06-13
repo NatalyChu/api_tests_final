@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Jun 13 14:40:52 GMT 2023","Tue Jun 13 14:40:53 GMT 2023","636","","test_api_get_tourist","","","","test_create_tourist",""
+"passed","Tue Jun 13 14:40:55 GMT 2023","Tue Jun 13 14:40:56 GMT 2023","656","","test_api_post_auth","","","","test_unsuccessful_login",""
+"passed","Tue Jun 13 14:40:56 GMT 2023","Tue Jun 13 14:40:57 GMT 2023","522","","test_api_post_auth","","","","test_unsuccessful_empty_login",""
+"passed","Tue Jun 13 14:40:53 GMT 2023","Tue Jun 13 14:40:54 GMT 2023","1338","","test_api_get_tourist","","","","test_get_tourist_by_id",""
+"passed","Tue Jun 13 14:40:54 GMT 2023","Tue Jun 13 14:40:55 GMT 2023","614","","test_api_get_tourist","","","","test_get_inexistent_tourist",""
+"passed","Tue Jun 13 14:40:51 GMT 2023","Tue Jun 13 14:40:52 GMT 2023","785","","test_api_get_tourist","","","","test_get_tourist",""
+"passed","Tue Jun 13 14:40:55 GMT 2023","Tue Jun 13 14:40:55 GMT 2023","641","","test_api_post_auth","","","","test_successful_login",""
