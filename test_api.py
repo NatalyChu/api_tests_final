@@ -21,7 +21,11 @@ def delete_tourist(tourist_email):
 
     client.perform_delete_request(f"/api/Tourist/{tourist_id}")
 
-# GET /api/Tourist/{id} endpoint tests
+
+@allure.title("GET /api/Tourist/{id} endpoint tests")
+
+
+@allure.story('The tourist data is being returned')
 def test_get_tourist():
     response = client.perform_get_request("/api/Tourist")
     response_body = response.json()
@@ -31,6 +35,7 @@ def test_get_tourist():
     assert isinstance(response_body["data"], list)
 
 
+@allure.story('The new tourist is being correctly created')
 def test_create_tourist():
     new_tourist = {
         "id": 100500,
@@ -48,6 +53,7 @@ def test_create_tourist():
     assert response_body["tourist_email"] == "nn@gm.com"
 
 
+@allure.story('The tourist data can be retrieved by an id')
 def test_get_tourist_by_id():
     tourist_id = get_tourist_id("nn@gm.com")
     response = client.perform_get_request(f"/api/Tourist/{tourist_id}")
@@ -57,6 +63,7 @@ def test_get_tourist_by_id():
     assert response_body["tourist_name"] is not None
     assert response_body["tourist_email"] is not None
 
+@allure.story('The tourist is not found')
 def test_get_inexistent_tourist():
     tourist_id = 90000000
     response = client.perform_get_request(f"/api/Tourist/{tourist_id}")
@@ -66,6 +73,7 @@ def test_get_inexistent_tourist():
 
 # POST /api/AuthAccount/Login endpoint tests
 
+@allure.story('The login is successful with the correct creds')
 def test_successful_login():
     data = {
         "email": "admin111@gm.com",
@@ -77,6 +85,7 @@ def test_successful_login():
     assert response.status_code == 200
     assert response_body["message"] == "success"
 
+@allure.story('The login is unsuccessful with the incorrect creds')
 def test_unsuccessful_login():
     data = {
         "email": "admin111@gmcom",
@@ -88,6 +97,7 @@ def test_unsuccessful_login():
     assert response.status_code == 200 # IMHO should not be 200 as designed there
     assert response_body["message"] == "invalid username or password"
 
+@allure.story('The login is unsuccessful with the empty creds')
 def test_unsuccessful_empty_login():
     data = {
         "email": "",
